@@ -1,0 +1,63 @@
+{% extends 'basic.html' %}
+{% load static %}
+
+{% block content %}
+
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<div id="page-wrapper">
+    <div class="main-page">
+        <div class="tables" style="padding-top: 5em;">
+            <h3 class="title1">Tables</h3>
+            <div class="panel-body widget-shadow">
+                <h4>Students Table </h4>
+                <!-- <div>{% if messages %} {% for mess in messages %}
+                    <b style="color: brown;">{{mess}}</b> {% endfor %} {% endif %}</div> -->
+            </div>
+                <table class="table" style="background-color: burlywood;">
+                    <thead>
+                        <tr>
+            
+                            <th>Name</th>
+                            
+  
+                            <th>State</th>
+                            <th>District</th>
+                            <th>Pincode</th>
+                           
+                            <th>Phone</th>
+                            <th>Type</th>
+                           
+                            
+                    
+                        </tr>
+                    </thead>
+                    {% for l in contrib %}
+                    <tbody>
+                        <tr>
+                            <td>{{l.user}}</td>
+                           
+  
+                            <td>{{l.state}}</td>
+                            <td>{{l.district}}</td>
+                            <td>{{l.pincode}}</td>
+                           
+                            <td>{{l.phone}}</td>
+                            <td>{{l.donation_user}}</td>
+                            
+                        
+                        </td>
+                    </tbody>
+                    {% endfor %}
+                </table>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+ 
+
+
+{% endblock %}

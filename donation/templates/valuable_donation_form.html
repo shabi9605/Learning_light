@@ -1,0 +1,27 @@
+
+{% extends 'c_basic.html' %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+<div style="background: url('/static/img/don1.jpg');background-repeat: no-repeat;background-size: 100% 100%;">
+
+<div style="padding-left: 2rem;padding-top: 2rem;padding-bottom: 1em;">
+    
+
+    <h2 style="color: #ec1616;font-weight: bold;">Donation form</h2>
+    <form action="" method="POST" style="font-weight: bold;color: red">
+        {% csrf_token %}
+        {{form|crispy}}
+        
+        
+        <input type="submit" value="SEND" style="background-color: #3e36c3;color: white;margin-top: 1em;">
+
+    </form>
+</div>
+</div>
+
+
+    {% if msg %}{{msg}}{% endif %}
+
+
+{% endblock %}

@@ -1,0 +1,42 @@
+{% extends 'c_basic.html' %}
+
+{% block content %}
+
+<div style="padding-left: 2rem;padding-top: 2rem;padding-bottom: 1em;background-color: #c9c1b1;">
+    {% for i in my_donations %}
+
+<div class="card text-center" style="margin-bottom: 1em;margin-right: 1em;background-color: palegoldenrod;">
+    <div class="card-header">
+     
+    </div>
+    <div class="card-body">
+      <h5 class="card-title">Username : {{i.user.username}}</h5>
+      
+      <p class="card-text">Valuables: {{i.type}}</p>
+      <p class="card-text">Contributor: {{i.contributor.user.username}}</p>
+      <p class="card-text">Phone: {{i.contributor.phone}}</p>
+      {% if i.status == 'pending' %}
+      <p class="card-text" style="color: rgb(236, 137, 8);font-weight: bold;">Arrival Status : {{i.status}}</p>
+      {% endif %}
+      {% if i.status == 'processing' %}
+      <p class="card-text" style="color: rgb(117, 47, 6);font-weight: bold;">Arrival Status : {{i.status}}</p>
+      {% endif %}
+      {% if i.status == 'received' %}
+      <p class="card-text" style="color: rgb(8, 236, 38);font-weight: bold;">Arrival Status : {{i.status}}</p>
+      {% endif %}
+
+      
+
+
+
+      
+    </div>
+    <div class="card-footer text-muted">
+     Date: {{i.date}}
+    </div>
+  </div>
+{% endfor %}
+
+</div>
+
+{% endblock %}

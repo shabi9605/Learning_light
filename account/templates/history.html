@@ -1,0 +1,38 @@
+{% extends 'c_basic.html' %}
+
+{% block content %}
+
+<div style="padding-left: 2rem;padding-top: 2rem;padding-bottom: 1em;background-color: #c9c1b1;"">
+    {% for i in history %}
+
+<div class="card text-center" style="margin-bottom: 1em;margin-right: 1em;background-color: palegoldenrod;">
+    <div class="card-header">
+     
+    </div>
+    <div class="card-body">
+      <h5 class="card-title">Username : {{i.user.username}}</h5>
+      
+      <p class="card-text">Amount : {{i.amount}}</p>
+      <p class="card-text">Payment ID : {{i.payment_id}}</p>
+      <p class="card-text">Order ID : {{i.order_id}}</p>
+      {% if i.is_paid == True %}
+      <p class="card-text" style="color: darkgreen;font-weight: bold;">Payment Status : {{i.is_paid}}</p>
+      {% else %}
+      <p class="card-text" style="color: rgb(238, 8, 8);font-weight: bold;">Payment Status : {{i.is_paid}}</p>
+      {% endif %}
+
+      
+
+
+
+      
+    </div>
+    <div class="card-footer text-muted">
+     Date: {{i.date}}
+    </div>
+  </div>
+{% endfor %}
+
+</div>
+
+{% endblock %}

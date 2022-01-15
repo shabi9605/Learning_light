@@ -1,0 +1,22 @@
+{% extends 'index.html' %}
+{% block title %}login{% endblock %}
+
+{% block content %}
+<div style="background-image: url('/static/images/login1.jpg');padding-left: 2em;padding-bottom: 2em;">
+    <center>
+<h1>LOGIN FORM</h1>
+
+<form action="" method="POST" style="font-size: 20px;font-weight: bold;">
+{% csrf_token %}
+<label>Username</label><br>
+<input type="text" name="username" required placeholder="username"><br>
+<label>Password</label><br>
+<input type="password" name="password" required placeholder="password"><br>
+<input type="submit" value="LOGIN" style="margin-top: 1em;">
+</form>
+{% if messages %}
+{% for msg in messages %}<h2 style="text-transform: capitalize; color:red;">{{msg}}</h2> {% endfor %}
+{% endif %}
+</center>
+</div>
+{% endblock %}
